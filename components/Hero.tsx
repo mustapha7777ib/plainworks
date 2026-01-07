@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Import your images (adjust paths as needed)
 import Building1 from '@public/images/building-1.webp';
@@ -44,14 +43,6 @@ export default function Hero() {
     }, 6000);
     return () => clearInterval(timer);
   }, []);
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  };
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  };
 
   const currentSlide = slides[currentIndex];
 
@@ -107,20 +98,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-3 rounded-full transition backdrop-blur-sm"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft size={32} />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-3 rounded-full transition backdrop-blur-sm"
-        aria-label="Next slide"
-      >
-        <ChevronRight size={32} />
-      </button>
+   
 
       {/* Dots Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">

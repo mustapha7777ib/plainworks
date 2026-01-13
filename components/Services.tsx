@@ -1,36 +1,45 @@
-// components/about/Services.tsx
+'use client';
+
 import { 
   Plus, 
-  Layers, 
-  Workflow, 
-  Fingerprint, 
-  ArrowUpRight 
+  Compass, 
+  HardHat, 
+  Truck, 
+  BarChart3, 
+  ShieldCheck 
 } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
-    title: "Project Architecture",
-    description: "We don't just organize tasks; we build systems. Our structures adapt to your team's unique rhythm and scale.",
-    icon: Layers,
-    tag: "Infrastructure"
+    title: "Design & Build",
+    description: "Integrated design and construction solutions that align creativity, engineering precision, and execution certainty.",
+    icon: Compass,
+    tag: "Integrated"
   },
   {
-    title: "Process Automation",
-    description: "Eliminate the 'work about work.' We automate status updates and handoffs so you can stay in flow state.",
-    icon: Workflow,
-    tag: "Efficiency"
+    title: "Construction & Infrastructure",
+    description: "End-to-end delivery for buildings and infrastructure, executed with discipline, safety, and quality assurance.",
+    icon: HardHat,
+    tag: "Execution"
   },
   {
-    title: "Identity & Security",
-    description: "Enterprise-grade protection that doesn't get in the way. Secure by default, transparent by design.",
-    icon: Fingerprint,
-    tag: "Security"
+    title: "Procurement",
+    description: "Strategic sourcing and supply of materials and equipment to safeguard cost, quality, and schedule outcomes.",
+    icon: Truck,
+    tag: "Supply Chain"
   },
   {
-    title: "Performance Metrics",
-    description: "Real data, no vanity. Get a clear view of your team's velocity and capacity without the spreadsheet bloat.",
-    icon: ArrowUpRight,
-    tag: "Analytics"
+    title: "Project Management (PMC)",
+    description: "Independent project leadership covering planning, controls, governance, and PMO setup.",
+    icon: BarChart3,
+    tag: "Governance"
+  },
+  {
+    title: "Facility & Asset Management",
+    description: "Operational and maintenance services that protect long-term asset value and ensure optimal performance.",
+    icon: ShieldCheck,
+    tag: "Lifecycle"
   },
 ];
 
@@ -44,40 +53,40 @@ export default function Services() {
           <div className="max-w-xl">
             <div className="flex items-center gap-2 text-orange-400 font-mono text-xs uppercase tracking-widest mb-4">
               <Plus size={14} />
-              <span>Core Capabilities</span>
+              <span>Full-Service Capabilities</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-slate-900">
-              We focus on the essentials <span className="text-slate-400">so you can focus on the work.</span>
+              Integrated delivery <span className="text-slate-400">across the project lifecycle.</span>
             </h2>
           </div>
           <div className="text-slate-500 text-sm font-mono leading-relaxed max-w-[280px]">
-            [01] SIMPLE INTERFACE <br />
-            [02] FAST PERFORMANCE <br />
-            [03] HUMAN SUPPORT
+            [01] DESIGN & BUILD <br />
+            [02] PMC CONSULTANCY <br />
+            [03] ASSET MANAGEMENT
           </div>
         </div>
 
-        {/* Grid Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 overflow-hidden rounded-sm">
+        {/* Grid Section - 3 columns on desktop to balance 5 items */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-200 border border-slate-200 overflow-hidden rounded-sm shadow-sm">
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="group relative bg-white p-10 md:p-14 transition-colors hover:bg-slate-50"
+              className="group relative bg-white p-10 md:p-12 transition-all duration-500 hover:bg-slate-50 flex flex-col justify-between min-h-[300px]"
             >
-              <div className="flex justify-between items-start mb-12">
-                <div className="p-3 bg-slate-900 text-white rounded-none">
-                  <service.icon size={20} strokeWidth={1.5} />
-                </div>
-                <span className="font-mono text-[10px] uppercase tracking-tighter text-slate-400 border border-slate-200 px-2 py-1">
-                  {service.tag}
-                </span>
-              </div>
-              
               <div>
-                <h3 className="text-2xl font-semibold text-slate-900 mb-4 tracking-tight">
+                <div className="flex justify-between items-start mb-10">
+                  <div className="p-3 bg-slate-900 text-white rounded-none group-hover:bg-orange-400 transition-colors duration-500">
+                    <service.icon size={20} strokeWidth={1.5} />
+                  </div>
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-slate-400 border border-slate-200 px-2 py-1">
+                    {service.tag}
+                  </span>
+                </div>
+                
+                <h3 className="text-xl font-semibold text-slate-900 mb-4 tracking-tight">
                   {service.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed text-lg max-w-sm">
+                <p className="text-slate-600 leading-relaxed text-base">
                   {service.description}
                 </p>
               </div>
@@ -88,6 +97,17 @@ export default function Services() {
               </div>
             </div>
           ))}
+
+          {/* Call to Action Grid Square */}
+          <div className="group relative bg-slate-900 p-10 md:p-12 flex flex-col justify-center items-center text-center">
+            <h4 className="text-white font-medium mb-6">Need a detailed service breakdown?</h4>
+            <Link 
+              href="/services" 
+              className="inline-flex items-center gap-2 text-orange-400 font-mono text-xs uppercase tracking-[0.2em] border-b border-orange-400/30 pb-2 hover:border-orange-400 transition-all"
+            >
+              Explore Services <Plus size={14} />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

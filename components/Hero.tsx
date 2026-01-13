@@ -13,23 +13,23 @@ const slides = [
   {
     id: 1,
     image: Building1,
-    title: "Simple Project Management",
-    highlight: "That Actually Works",
-    description: "Planworks helps teams plan, track, and deliver projects on time — without the complexity.",
+    title: "From Concept to Completion",
+    highlight: "Seamless Integrated Delivery",
+    description: "Planwork Group delivers fully integrated Design & Build solutions for complex infrastructure, managed under a single accountable framework.",
   },
   {
     id: 2,
     image: Building2,
-    title: "Focus on What Matters",
-    highlight: "Clear. Fast. Effective.",
-    description: "Streamline workflows, eliminate distractions, and ship great work with confidence.",
+    title: "Precision in Every Project",
+    highlight: "On Time. On Budget.",
+    description: "Technology-driven planning and disciplined execution that ensures structural integrity and financial certainty across every sector.",
   },
   {
     id: 3,
     image: Building3,
-    title: "Built for Real Teams",
-    highlight: "No Bloat. Just Results.",
-    description: "From startups to enterprises — tools that scale with you, not against you.",
+    title: "Building Long-Term Value",
+    highlight: "Engineering Excellence",
+    description: "From strategic procurement to facility management, we provide end-to-end solutions that protect and optimize your physical assets.",
   },
 ];
 

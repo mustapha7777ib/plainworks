@@ -2,14 +2,14 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "./navbar/page";
+import Navbar from "@components/Navbar";
 import Footer from "@/components/Footer";
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Planworks - Simple & Powerful Project Management",
-  description: "Streamline your team's workflow with intuitive task tracking, collaboration, and reporting.",
+  title: "Planwork Group | Integrated Design, Construction & Project Management",
+  description: "A technology-enabled project delivery group specializing in Design & Build, Procurement, and PMC across Africa.",
 };
 
 export default function RootLayout({

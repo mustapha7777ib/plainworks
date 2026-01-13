@@ -1,0 +1,143 @@
+'use client';
+
+import React from 'react';
+import { Mail, Phone, MapPin, Minus, Send, Linkedin, Instagram } from "lucide-react";
+
+export default function ContactPage() {
+  return (
+    <main className="bg-white pt-32 pb-24">
+      <div className="container mx-auto px-6">
+        
+        {/* Section Header */}
+        <div className="max-w-4xl mb-20">
+          <div className="flex items-center gap-2 text-slate-400 font-mono text-[10px] uppercase tracking-[0.2em] mb-6">
+            <Minus size={16} />
+            <span>Connect with us</span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 mb-8">
+            Let's build <br />
+            <span className="text-orange-400 italic font-medium">something lasting.</span>
+          </h1>
+          <p className="text-xl text-slate-500 max-w-2xl leading-relaxed">
+            Whether you're starting a new development or looking for project management consultancy, 
+            our team is ready to provide the technical rigor your project deserves.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+          
+          {/* Left: Contact Form */}
+          <div className="lg:col-span-7">
+            <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-2">
+                  <label className="font-mono text-[10px] uppercase tracking-widest text-slate-400">Full Name</label>
+                  <input 
+                    type="text" 
+                    placeholder="John Doe"
+                    className="w-full bg-slate-50 border-b border-slate-200 p-4 focus:border-orange-400 focus:outline-none transition-colors"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="font-mono text-[10px] uppercase tracking-widest text-slate-400">Email Address</label>
+                  <input 
+                    type="email" 
+                    placeholder="john@company.com"
+                    className="w-full bg-slate-50 border-b border-slate-200 p-4 focus:border-orange-400 focus:outline-none transition-colors"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label className="font-mono text-[10px] uppercase tracking-widest text-slate-400">Subject / Service Interest</label>
+                <select className="w-full bg-slate-50 border-b border-slate-200 p-4 focus:border-orange-400 focus:outline-none transition-colors appearance-none">
+                  <option>Design & Build</option>
+                  <option>Project Management Consultancy</option>
+                  <option>Procurement Services</option>
+                  <option>General Inquiry</option>
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <label className="font-mono text-[10px] uppercase tracking-widest text-slate-400">Message</label>
+                <textarea 
+                  rows={5}
+                  placeholder="Tell us about your project goals..."
+                  className="w-full bg-slate-50 border-b border-slate-200 p-4 focus:border-orange-400 focus:outline-none transition-colors resize-none"
+                />
+              </div>
+
+              <button className="group flex items-center gap-3 bg-slate-900 text-white px-10 py-5 rounded-full hover:bg-orange-400 transition-all duration-300">
+                <span className="font-bold tracking-wide uppercase text-xs">Send Message</span>
+                <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </button>
+            </form>
+          </div>
+
+          {/* Right: Contact Information */}
+          <div className="lg:col-span-5 space-y-12">
+            
+            {/* Office Info */}
+            <div>
+              <h3 className="font-mono text-[10px] uppercase tracking-[0.3em] text-orange-400 mb-6">Headquarters</h3>
+              <div className="flex gap-4">
+                <MapPin className="text-slate-900 shrink-0" size={24} strokeWidth={1.5} />
+                <p className="text-lg text-slate-600 leading-relaxed">
+                  Lagos, Nigeria <br />
+                  <span className="text-sm text-slate-400">Available for projects across West Africa and beyond.</span>
+                </p>
+              </div>
+            </div>
+
+            {/* Direct Contact */}
+            <div className="space-y-6">
+              <h3 className="font-mono text-[10px] uppercase tracking-[0.3em] text-orange-400 mb-6">Direct Channels</h3>
+              
+              <a href="mailto:hello@planworkgroup.com" className="flex items-center gap-4 group">
+                <div className="w-12 h-12 bg-slate-50 flex items-center justify-center group-hover:bg-orange-50 transition-colors">
+                  <Mail className="text-slate-900 group-hover:text-orange-400 transition-colors" size={20} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-mono uppercase text-slate-400">Email Us</p>
+                  <p className="text-lg font-semibold text-slate-900">hello@planworkgroup.com</p>
+                </div>
+              </a>
+
+              <a href="tel:+2340000000000" className="flex items-center gap-4 group">
+                <div className="w-12 h-12 bg-slate-50 flex items-center justify-center group-hover:bg-orange-50 transition-colors">
+                  <Phone className="text-slate-900 group-hover:text-orange-400 transition-colors" size={20} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-mono uppercase text-slate-400">Call Us</p>
+                  <p className="text-lg font-semibold text-slate-900">+234 (0) 000 000 0000</p>
+                </div>
+              </a>
+            </div>
+
+            {/* Social Connection */}
+            <div className="pt-8 border-t border-slate-100">
+              <h3 className="font-mono text-[10px] uppercase tracking-[0.3em] text-slate-400 mb-6">Socials</h3>
+              <div className="flex gap-4">
+                <a href="#" className="p-3 border border-slate-100 rounded-full hover:border-orange-400 hover:text-orange-400 transition-all">
+                  <Linkedin size={20} />
+                </a>
+                <a href="#" className="p-3 border border-slate-100 rounded-full hover:border-orange-400 hover:text-orange-400 transition-all">
+                  <Instagram size={20} />
+                </a>
+              </div>
+            </div>
+
+            {/* Business Hours Badge */}
+            <div className="bg-slate-900 p-8 text-white rounded-sm">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-orange-400 mb-2">Response Time</p>
+              <p className="text-sm leading-relaxed text-slate-300">
+                Our project coordination team typically responds to initial inquiries within 24 business hours.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+}

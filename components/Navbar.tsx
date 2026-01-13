@@ -21,8 +21,8 @@ export default function Navbar() {
   const closeMenu = () => setMobileMenuOpen(false);
 
   const navLinks = [
+    { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
-    { name: "Projects", href: "#projects" },
     { name: "Testimonials", href: "#testimonials" },
     { name: "Contact Us", href: "#contact" },
   ];
@@ -43,13 +43,12 @@ export default function Navbar() {
             {/* Brand Logo */}
             <Link href="/" className="group flex items-center gap-2.5">
               <div className="flex items-center justify-centertransition-transform">
-                <img src={Logo.src} alt="Planworks Logo" className="w-10 h-10 object-contain rounded-lg " />
+                <img src={Logo.src} alt="Planwork Group Logo" className="w-10 h-10 object-contain rounded-lg " />
               </div>
               <span className={cn(
-                "text-xl font-bold tracking-tighter text-orange-400",
-                scrolled ? " text-orange-400" : "text-orange-400 md:text-white"
+                "text-xl font-bold tracking-tighter text-orange-400"
               )}>
-                Planworks <span>Consulting</span>
+                Planwork Group
               </span>
             </Link>
 
@@ -60,8 +59,8 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   className={cn(
-                    "text-[13px] font-mono uppercase tracking-widest transition-all hover:opacity-60",
-                    scrolled ? "text-slate-600" : "text-white/80 hover:text-white"
+                    "text-[13px] font-mono uppercase tracking-widest transition-all hover:opacity-60 text-slate-300",
+                    scrolled ? "text-slate-600" : ""
                   )}
                 >
                   {link.name}

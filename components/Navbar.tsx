@@ -21,10 +21,9 @@ export default function Navbar() {
   const closeMenu = () => setMobileMenuOpen(false);
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact Us", href: "#contact" },
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Contact Us", href: "/contact" },
   ];
 
   return (
